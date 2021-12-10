@@ -7,7 +7,7 @@ from .models import Persona
 # Create your views here.
 def persona_list(request):
     Personne = Persona.objects.filter(available=True)
-    return HttpResponse(Persona.first_name)
+    return HttpResponse("hello")
 
 def persona_details(request, id):
     return HttpResponse(f"Détails d'une personne {id}")

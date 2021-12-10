@@ -18,4 +18,4 @@ class Persona(models.Model):
     
     
     def __str__(self):
-        return self.first_name,self.first_name
+        return self.first_name
