@@ -9,11 +9,11 @@ class Persona(models.Model):
     address_street = models.TextField()
     city = models.CharField(max_length=50)
     country = models.CharField(max_length=50)
-    postcode = models.IntegerField(max_length=10)
+    postcode = models.IntegerField()
     email =  models.CharField(max_length=50)
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
-    age = models.IntegerField(max_length=2)
+    age = models.IntegerField()
     picture = models.CharField(max_length=50)
     
     
