@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <h3>Liste de persona_app_persona :</h3>
+    <ul>
+    {% for list in personne %}
+    <li> Personne {{ list.id }} : {{ list.first_name }} - {{ list.last_name }} - {{ list.email }} </li>
+    {% endfor %}
+    </ul>
+    </body>
+</html>
+<style type="text/css">
+body {
+    font-size: 20px;
+}
+    
+</style>

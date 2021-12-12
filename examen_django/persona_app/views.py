@@ -4,13 +4,16 @@ from .models import Persona
 
 # Create your views here.
 def persona_list(request):
-    personne = Persona.objects.all()
-    context={}
-    return render(request,"",context)
-    # return HttpResponse(message)
+    personne = Persona.objects.all().order_by('-id')
+    context = {'personne':personne}
+    # return render(request,"",context)
+    return render(request,'persona_app\liste_template.html', context)
+    # return HttpResponse(personne)
 
 def persona_details(request, id):
-    return HttpResponse(f"Détails d'une personne {id}")
+    personne = Persona.objects.get(pk=id)
+    context={}
+    return HttpResponse(personne)
 
 def persona_create(request):
     return HttpResponse("Creation d'une personne")
