@@ -7,13 +7,13 @@ def persona_list(request):
     personne = Persona.objects.all().order_by('-id')
     context = {'personne':personne}
     # return render(request,"",context)
-    return render(request,'persona_app\liste_template.html', context)
+    return render(request,'persona_app\list_template.html', context)
     # return HttpResponse(personne)
 
 def persona_details(request, id):
-    personne = Persona.objects.get(pk=id)
-    context={}
-    return HttpResponse(personne)
+    personne = Persona.objects.get(id=id)
+    context={'personne':personne}
+    return render(request,'persona_app\details_template.html', context)
 
 def persona_create(request):
     return HttpResponse("Creation d'une personne")

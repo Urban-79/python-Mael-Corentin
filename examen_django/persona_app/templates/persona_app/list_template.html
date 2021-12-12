@@ -3,7 +3,7 @@
         <h3>Liste de persona_app_persona :</h3>
     <ul>
     {% for list in personne %}
-    <li> Personne {{ list.id }} : {{ list.first_name }} - {{ list.last_name }} - {{ list.email }} </li>
+    <li> Personne {{ list.id }} : <a href="{% url 'persona_details' list.id %}">{{ list.first_name }}</a> - <a href="{% url 'persona_details' list.id %}">{{ list.last_name }}</a> - {{ list.email }} </li>
     {% endfor %}
     </ul>
     </body>

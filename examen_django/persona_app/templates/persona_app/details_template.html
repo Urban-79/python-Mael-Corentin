@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <h3>{% block title %}Détails de la personne {{ personne.first_name }}{% endblock title %}</h3>
+    <ul>
+    {% if personne.id is not None %}
+     Personne {{ personne.id }} :{{ personne.first_name }} - {{ personne.last_name }} - {{ personne.email }}
+    {% else %}
+    Cette personne n'existe pas 
+    {% endif %}
+    </ul>
+    </body>
+</html>
+<style type="text/css">
+body {
+    font-size: 20px;
+}
+    
+</style>
