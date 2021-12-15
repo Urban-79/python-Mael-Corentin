@@ -6,6 +6,7 @@
     <li> Personne {{ list.id }} : <a href="{% url 'persona_details' list.id %}">{{ list.first_name }}</a> - <a href="{% url 'persona_details' list.id %}">{{ list.last_name }}</a> - {{ list.email }} </li>
     {% endfor %}
     </ul>
+    <a href="{% url 'persona_generate'%}">create new </a>   
     </body>
 </html>
 <style type="text/css">

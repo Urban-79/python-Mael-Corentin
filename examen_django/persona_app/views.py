@@ -1,6 +1,8 @@
+from types import new_class
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Persona
+import requests
 
 # Create your views here.
 def persona_list(request):
@@ -15,12 +17,8 @@ def persona_details(request, id):
     context={'personne':personne}
     return render(request,'persona_app\details_template.html', context)
 
-def persona_create(request):
-    return HttpResponse("Creation d'une personne")
-
-def persona_update(request, id):
-    return HttpResponse(f"Update d'une personne : {id}")
-
-def persona_delete(request, id):
-    return HttpResponse(f"Delete d'une personne : {id}")
-
+def persona_generate(request):
+    url="https://randomuser.me/api?nat=fr>"
+    personne = requests.get(url)
+    context={'personne':personne}
+    return render(request,'persona_app\create_template.html', context)
