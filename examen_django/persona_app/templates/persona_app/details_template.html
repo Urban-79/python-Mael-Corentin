@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <h3>{% block title %}Détails {{ personne.first_name }}{% endblock title %}</h3>
+    <ul>
+    {% if personne.id is not None %}
+    <img src="{{ personne.picture }}" />
+    
+    <br/>
+    <b>Id :</b> {{ personne.id }} 
+    <br/>
+    <b>Prénom : </b>{{ personne.first_name }}  / <b>Nom : </b>{{ personne.last_name }} / <b>Age : </b>{{ personne.age }} 
+    <br/>
+    <b>Adresse : </b> {{ personne.address_street }}, {{ personne.city }}, {{ personne.postcode }},  {{ personne.country }}, 
+    <br/>
+    <b>Email : </b>{{ personne.email }} / <b>User Name : </b>{{ personne.username }} / <b>mot de passe: </b>{{ personne.password }}
+    <br/>
+    <a href="{% url 'persona_list'%}">Back</a>    
+    {% else %}
+    Cette personne n'existe pas 
+    {% endif %}
+    </ul>
+    </body>
+</html>
+<style type="text/css">
+body {
+    font-size: 20px;
+}
+    
+</style>
